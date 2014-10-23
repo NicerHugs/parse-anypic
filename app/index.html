@@ -32,6 +32,7 @@
       <a href="/#/logout" class="logout">logout</a>
       <a href="/#/users" class="users">users</a>
       <a href="/#/photos" class="photos">photos</a>
+      <a href="/#/add" class="add-photo">add</a>
     </script>
 
     <script type='text/template' id='login-template'>
@@ -70,9 +71,20 @@
     </script>
 
     <script type="text/template" id="photo-view-template">
-      <a href="close" class="close">x</a>
-      <img src="http://www.fillmurray.com/500/300">
-      <p> # likes</p>
+      <div id="photo-view-content">
+        <a href="close" class="close">x</a>
+        <img src="http://www.fillmurray.com/500/300">
+        <p> # likes</p>
+      </div>
+    </script>
+
+    <script type="text/template" id="add-photo-view-template">
+      <form id="add-photo-view-content">
+        <input type="file">
+        <input type="text" placeholder="title">
+        <a href="close" class="close">x</a>
+        <input type="submit">
+      </form>
     </script>
 
     <script type="text/template" id="comment-form-template">
@@ -118,6 +130,7 @@
     <script src="scripts/views/photos.js"></script>
     <script src="scripts/views/commentForm.js"></script>
     <script src="scripts/views/commentList.js"></script>
+    <script src="scripts/views/addPhoto.js"></script>
     <script src="scripts/models/user.js"></script>
     <script src="scripts/models/photo.js"></script>
     <script src="scripts/models/activity.js"></script>

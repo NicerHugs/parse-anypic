@@ -7,13 +7,14 @@
       new Anypic.Views.App({ });
       this.routesHit = 0;
       Parse.history.on('route', function() {
-        self.routesHit++; console.log(self.routesHit);}, self);
+        self.routesHit++;}, self);
     },
     routes: {
       ''             : 'index',
       'photos'       : 'photosIndex',
       'photos/photo' : 'photoIndex', //dynamic
       'photos/liked' : 'photosLiked',
+      'photos/add'   : 'addPhoto',
       'users'        : 'usersIndex',
       'user'         : 'userIndex', //dynamic
       'login'        : 'login',
@@ -31,6 +32,17 @@
       $('main').empty();
       new Anypic.Views.Photos({
         $container: $('main')
+      });
+    },
+    photosLiked: function() {
+      $('main').empty();
+      new Anypic.Views.Photos({
+        $container: $('main')
+      });
+    },
+    addPhoto: function() {
+      new Anypic.Views.AddPhoto({
+        $container: $('.container')
       });
     },
     photoIndex: function() {

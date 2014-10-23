@@ -1,18 +1,12 @@
 (function() {
 
-  Anypic.Views.Photo = Anypic.Views.Base.extend({
-    className: 'photo-view',
-    template: _.template($('#photo-view-template').text()),
+  Anypic.Views.AddPhoto = Anypic.Views.Base.extend({
+    className: 'add-photo-view',
+    template: _.template($('#add-photo-view-template').text()),
     render: function() {
       this.$el.html(this.template());
       new Anypic.Views.Subheader({
-        $container: $('#photo-view-content')
-      });
-      new Anypic.Views.CommentForm({
-        $container: $('#photo-view-content')
-      });
-      new Anypic.Views.CommentList({
-        $container: $('#photo-view-content')
+        $container: $('#add-photo-view-content')
       });
     },
     events: {
@@ -21,7 +15,7 @@
     },
 
     closeImg: function(e) {
-      if ($.contains((e.target), document.getElementById('photo-view-content'))) {
+      if ($.contains((e.target), document.getElementById('add-photo-view-content'))) {
         this.remove();
         // if user found this photo via internal navigation
         if(Anypic.router.routesHit > 1) {
