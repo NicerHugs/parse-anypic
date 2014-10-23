@@ -23,10 +23,14 @@
     },
 
     index: function() {
-      $('main').empty();
-      new Anypic.Views.Profile({
-        $container: $('main')
-      });
+      if(Parse.User.current()) {
+        $('main').empty();
+        new Anypic.Views.Profile({
+          $container: $('main')
+        });
+      } else {
+        this.navigate('login', {trigger: true});
+      }
     },
     photosIndex: function() {
       $('main').empty();
@@ -64,24 +68,37 @@
     },
     login: function() {
       $('main').empty();
-      new Anypic.Views.Login({
-        $container: $('main')
-      });
+      if (Parse.User.current()) {
+        this.navigate('', {trigger: true});
+      } else {
+        new Anypic.Views.Login({
+          $container: $('main')
+        });
+      }
     },
     logout: function() {
       $('main').empty();
-      new Anypic.Views.Logout({
-        $container: $('main')
-      });
-      new Anypic.Views.Login({
-        $container: $('main')
-      });
+      if (Parse.User.current()){
+        Parse.User.logOut();
+        new Anypic.Views.Logout({
+          $container: $('main')
+        });
+        new Anypic.Views.Login({
+          $container: $('main')
+        });
+      } else {
+        this.navigate('login', {trigger: true});
+      }
     },
     signup: function() {
-      $('main').empty();
-      new Anypic.Views.Signup({
+      if (Parse.User.current()) {
+        this.navigate('index', {trigger: true});
+      } else {
+        $('main').empty();
+        new Anypic.Views.Signup({
         $container: $('main')
       });
+      }
     }
 
   });

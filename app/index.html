@@ -27,25 +27,30 @@
 
 
     <script type='text/template' id='nav-template'>
-      <a href="/#/login" class="login">login</a>
-      <a href="/#/signup" class="signup">sign up</a>
-      <a href="/#/logout" class="logout">logout</a>
-      <a href="/#/users" class="users">users</a>
-      <a href="/#/photos" class="photos">photos</a>
-      <a href="/#/add" class="add-photo">add</a>
+      <% if (Parse.User.current()) { %>
+        <a href="/#/logout" class="logout">logout</a>
+        <a href="/#/add" class="add-photo">add</a>
+        <a href="/#/users" class="users">users</a>
+        <a href="/#/photos" class="photos">photos</a>
+      <% } else { %>
+        <a href="/#/login" class="login">login</a>
+        <a href="/#/signup" class="signup">sign up</a>
+        <a href="/#/users" class="users">users</a>
+        <a href="/#/photos" class="photos">photos</a>
+      <% } %>
     </script>
 
     <script type='text/template' id='login-template'>
-      <input type="text" placeholder="email">
-      <input type="password" placeholder="password">
+      <input type="text" class="email" placeholder="email">
+      <input type="password" class="password" placeholder="password">
       <input type="submit" value="login">
     </script>
 
     <script type='text/template' id='signup-template'>
-      <input type="text" placeholder="username">
-      <input type="text" placeholder="email">
-      <input type="password" placeholder="password">
-      <input type="password" placeholder="verify password">
+      <input type="text" class="username" placeholder="username">
+      <input type="email" class="email" placeholder="email">
+      <input type="password" class="password" placeholder="password">
+      <input type="password" class="verify-password" placeholder="verify password">
       <input type="submit" value="create account">
     </script>
 
