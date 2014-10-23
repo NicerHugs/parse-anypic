@@ -56,11 +56,15 @@
 
     <script type="text/template" id="object-list-template">
       <li>
-        <a href="/#user">
+        <a href="#" class=object-list-link>
           <img src="http://www.fillmurray.com/100/100">
-          <h3>Username</h3>
+          <h3>Title</h3>
         </a>
       </li>
+    </script>
+
+    <script type="text/template" id="user-profile-template">
+      <img src="http://www.fillmurray.com/500/300">
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -87,6 +91,8 @@
     <script src="scripts/views/logout.js"></script>
     <script src="scripts/views/subheader.js"></script>
     <script src="scripts/views/objectList.js"></script>
+    <script src="scripts/views/users.js"></script>
+    <script src="scripts/views/profile.js"></script>
     <script src="scripts/models/user.js"></script>
     <script src="scripts/models/photo.js"></script>
     <script src="scripts/models/activity.js"></script>

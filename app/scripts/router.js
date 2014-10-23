@@ -41,10 +41,13 @@
     },
     usersIndex: function() {
       $('main').empty();
-      new Anypic.Views.Subheader({
+      new Anypic.Views.Users({
         $container: $('main')
       });
-      new Anypic.Views.ObjectList({
+    },
+    userIndex: function() {
+      $('main').empty();
+      new Anypic.Views.Profile({
         $container: $('main')
       });
     }
