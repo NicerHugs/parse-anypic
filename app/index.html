@@ -61,12 +61,14 @@
     </script>
 
     <script type="text/template" id="object-list-template">
-      <li>
-        <a href="#" class=object-list-link>
-          <img src="http://www.fillmurray.com/100/100">
-          <h3>Title</h3>
-        </a>
-      </li>
+      <% _.each(photos, function(photo) { %>
+        <li>
+          <a href="#" class=object-list-link>
+            <img width="100" height="100" src="<%= photo.image %>">
+            <h3><%= photo.title %></h3>
+          </a>
+        </li>
+      <% }); %>
     </script>
 
     <script type="text/template" id="user-profile-template">

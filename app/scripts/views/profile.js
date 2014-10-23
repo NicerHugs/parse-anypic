@@ -8,8 +8,16 @@
       new Anypic.Views.Subheader({
         $container: this.$el
       });
-      new Anypic.Views.ObjectList({
-        $container: this.$el
+      var query = new Parse.Query(Anypic.Models.Photo);
+      query.equalTo('author', Parse.User.current());
+      var collection = query.collection();
+      var self = this;
+      collection.fetch()
+      .then(function(){
+        new Anypic.Views.ObjectList({
+          $container: self.$el,
+          collection: collection
+        });
       });
     },
     events: {

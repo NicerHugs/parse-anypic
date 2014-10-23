@@ -26,7 +26,7 @@
       if(Parse.User.current()) {
         $('main').empty();
         new Anypic.Views.Profile({
-          $container: $('main')
+          $container: $('main'),
         });
       } else {
         this.navigate('login', {trigger: true});
@@ -35,7 +35,7 @@
     photosIndex: function() {
       $('main').empty();
       new Anypic.Views.Photos({
-        $container: $('main')
+        $container: $('main'),
       });
     },
     photosLiked: function() {
