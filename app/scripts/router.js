@@ -3,8 +3,11 @@
 
   Anypic.Router = Parse.Router.extend({
     initialize: function() {
+      var self=this;
       new Anypic.Views.App({ });
-      this.navigate('login', {trigger: true, replace: true});
+      this.routesHit = 0;
+      Parse.history.on('route', function() {
+        self.routesHit++; console.log(self.routesHit);}, self);
     },
     routes: {
       ''             : 'index',
@@ -28,6 +31,11 @@
       $('main').empty();
       new Anypic.Views.Photos({
         $container: $('main')
+      });
+    },
+    photoIndex: function() {
+      new Anypic.Views.Photo({
+        $container: $('.container')
       });
     },
     usersIndex: function() {

@@ -69,6 +69,25 @@
       <img src="http://www.fillmurray.com/500/300">
     </script>
 
+    <script type="text/template" id="photo-view-template">
+      <a href="close" class="close">x</a>
+      <img src="http://www.fillmurray.com/500/300">
+      <p> # likes</p>
+    </script>
+
+    <script type="text/template" id="comment-form-template">
+      <img src="http://www.fillmurray.com/50/50">
+      <textarea class="comment-form" placeholder="leave a comment"></textarea>
+    </script>
+
+    <script type="text/template" id="comment-list-template">
+      <li>
+        <img src="http://www.fillmurray.com/50/50">
+        <span class="comment-username">username: </span>
+        <span class="comment-body">a comment</span>
+      </li>
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -95,7 +114,10 @@
     <script src="scripts/views/objectList.js"></script>
     <script src="scripts/views/users.js"></script>
     <script src="scripts/views/profile.js"></script>
+    <script src="scripts/views/photo.js"></script>
     <script src="scripts/views/photos.js"></script>
+    <script src="scripts/views/commentForm.js"></script>
+    <script src="scripts/views/commentList.js"></script>
     <script src="scripts/models/user.js"></script>
     <script src="scripts/models/photo.js"></script>
     <script src="scripts/models/activity.js"></script>
