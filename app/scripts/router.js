@@ -46,7 +46,8 @@
     },
     addPhoto: function() {
       new Anypic.Views.AddPhoto({
-        $container: $('.container')
+        $container: $('.container'),
+        model: new Anypic.Models.Photo()
       });
     },
     photoIndex: function() {

@@ -27,17 +27,15 @@
 
 
     <script type='text/template' id='nav-template'>
-      <% if (Parse.User.current()) { %>
+      <% //if (Parse.User.current()) { %>
         <a href="/#/logout" class="logout">logout</a>
         <a href="/#/add" class="add-photo">add</a>
-        <a href="/#/users" class="users">users</a>
-        <a href="/#/photos" class="photos">photos</a>
-      <% } else { %>
+      <% //} else { %>
         <a href="/#/login" class="login">login</a>
         <a href="/#/signup" class="signup">sign up</a>
+      <% //} %>
         <a href="/#/users" class="users">users</a>
         <a href="/#/photos" class="photos">photos</a>
-      <% } %>
     </script>
 
     <script type='text/template' id='login-template'>
@@ -86,7 +84,7 @@
     <script type="text/template" id="add-photo-view-template">
       <form id="add-photo-view-content">
         <input type="file">
-        <input type="text" placeholder="title">
+        <input type="text" class="title" placeholder="title">
         <a href="close" class="close">x</a>
         <input type="submit">
       </form>
