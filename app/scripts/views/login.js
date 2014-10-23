@@ -5,12 +5,16 @@
     render: function() {
       this.$el.html(this.template());
     },
-    actions: {
+    events: {
       'submit' : 'login'
     },
     login: function(e) {
       e.preventDefault();
       Anypic.router.navigate('/');
+      this.remove();
+      if ($('.logout-msg')) {
+        $('.logout-msg').remove();
+      }
     }
   });
 })();

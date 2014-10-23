@@ -5,12 +5,13 @@
     render: function() {
       this.$el.html(this.template());
     },
-    actions: {
+    events: {
       'submit' : 'signup'
     },
     signup: function(e) {
       e.preventDefault();
       Anypic.router.navigate('/');
+      this.remove();
     }
   });
 })();

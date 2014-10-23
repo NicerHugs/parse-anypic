@@ -4,7 +4,7 @@
   Anypic.Router = Parse.Router.extend({
     initialize: function() {
       new Anypic.Views.App({});
-      this.navigate('/login', {trigger: true, replace: true});
+      this.navigate('login', {trigger: true, replace: true});
     },
     routes: {
       '' : 'index',
