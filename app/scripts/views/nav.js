@@ -8,7 +8,8 @@
     events: {
       'click .login'  : 'login',
       'click .logout' : 'logout',
-      'click .signup' : 'signup'
+      'click .signup' : 'signup',
+      'click .users'  : 'users'
     },
     login: function(e) {
       e.preventDefault();
@@ -21,6 +22,10 @@
     signup: function(e) {
       e.preventDefault();
       Anypic.router.navigate('signup', {trigger: true});
+    },
+    users: function(e) {
+      e.preventDefault();
+      Anypic.router.navigate('users', {trigger: true});
     }
   });
 })();

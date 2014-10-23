@@ -16,7 +16,6 @@
     viewUser: function(e) {
       e.preventDefault();
       Anypic.router.navigate('user', {trigger: true});
-      console.log('you want to view this user');
     }
   });
 

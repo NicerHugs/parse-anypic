@@ -18,6 +18,12 @@
       'signup'       : 'signup'
     },
 
+    index: function() {
+      $('main').empty();
+      new Anypic.Views.Profile({
+        $container: $('main')
+      });
+    },
     login: function() {
       $('main').empty();
       new Anypic.Views.Login({
