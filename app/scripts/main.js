@@ -8,7 +8,7 @@
 
   $(document).ready(function() {
     Parse.initialize("n2FkI50T90q2AKTnXiwuWo1Rl3KeCkMRek7OHQoR", "ZDSSQlJysTp3GKz3fzKE0O1WZKAEEuuyoPhv8CHc");
-    window.Anypic = new Anypic.Router();
+    window.AnypicRouter = new Anypic.Router();
     Parse.history.start();
   });
 
