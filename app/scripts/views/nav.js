@@ -9,7 +9,8 @@
       'click .login'  : 'login',
       'click .logout' : 'logout',
       'click .signup' : 'signup',
-      'click .users'  : 'users'
+      'click .users'  : 'users',
+      'click .photos' : 'photos'
     },
     login: function(e) {
       e.preventDefault();
@@ -26,6 +27,10 @@
     users: function(e) {
       e.preventDefault();
       Anypic.router.navigate('users', {trigger: true});
+    },
+    photos: function(e) {
+      e.preventDefault();
+      Anypic.router.navigate('photos', {trigger: true});
     }
   });
 })();

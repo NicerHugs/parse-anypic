@@ -1,10 +1,8 @@
 (function() {
 
-  Anypic.Views.Profile = Anypic.Views.Base.extend({
-    className: 'user-profile',
-    template: _.template($('#user-profile-template').text()),
+  Anypic.Views.Photos = Anypic.Views.Base.extend({
+    className: 'users-list',
     render: function() {
-      this.$el.html(this.template());
       new Anypic.Views.Subheader({
         $container: this.$el
       });

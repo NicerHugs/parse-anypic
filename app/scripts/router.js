@@ -24,24 +24,9 @@
         $container: $('main')
       });
     },
-    login: function() {
+    photosIndex: function() {
       $('main').empty();
-      new Anypic.Views.Login({
-        $container: $('main')
-      });
-    },
-    signup: function() {
-      $('main').empty();
-      new Anypic.Views.Signup({
-        $container: $('main')
-      });
-    },
-    logout: function() {
-      $('main').empty();
-      new Anypic.Views.Logout({
-        $container: $('main')
-      });
-      new Anypic.Views.Login({
+      new Anypic.Views.Photos({
         $container: $('main')
       });
     },
@@ -54,6 +39,27 @@
     userIndex: function() {
       $('main').empty();
       new Anypic.Views.Profile({
+        $container: $('main')
+      });
+    },
+    login: function() {
+      $('main').empty();
+      new Anypic.Views.Login({
+        $container: $('main')
+      });
+    },
+    logout: function() {
+      $('main').empty();
+      new Anypic.Views.Logout({
+        $container: $('main')
+      });
+      new Anypic.Views.Login({
+        $container: $('main')
+      });
+    },
+    signup: function() {
+      $('main').empty();
+      new Anypic.Views.Signup({
         $container: $('main')
       });
     }
