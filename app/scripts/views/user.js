@@ -4,33 +4,26 @@
     className: 'user-profile',
     template: _.template($('#user-profile-template').text()),
     render: function() {
-      var userID = location.hash.slice(8);
       var self = this;
+      var userID = location.hash.slice(8);
       this.$el.html(this.template());
+      var query = new Parse.Query(Anypic.Models.Photo);
       var user = new Anypic.Models.User({id: userID});
       user.fetch().then(function(){
         new Anypic.Views.Subheader({
           $container: self.$el,
           model: {name: user.get('name')}
         });
-      });
-      var query = new Parse.Query(Anypic.Models.Photo);
-      var userQuery = new Parse.Query(Anypic.Models.User);
-      userQuery.get(userID, {
-        success: function(user) {
-          query.equalTo('author', user);
-          var collection = query.collection();
-          collection.fetch()
-          .then(function(){
-            new Anypic.Views.ObjectList({
-              $container: self.$el,
-              collection: collection
-            });
+        query.equalTo('author', user);
+        var collection = query.collection();
+        collection.fetch()
+        .then(function() {
+          new Anypic.Views.ObjectList({
+            $container: self.$el,
+            collection: collection
           });
-          },
-        error: function() {
-          console.log("didn't find user");}
         });
+      });
     },
     events: {
       'click .object-list-link' : 'viewPhoto'
