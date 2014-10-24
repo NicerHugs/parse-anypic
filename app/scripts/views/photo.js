@@ -2,11 +2,24 @@
 
   Anypic.Views.Photo = Anypic.Views.Base.extend({
     className: 'photo-view',
+    initialize: function(options) {
+      var self = this;
+      var photoID = location.hash.slice(8);
+      var photo = new Anypic.Models.Photo({id: photoID});
+      photo.fetch().then(function() {
+        self.model = photo;
+        self.$container = options.$container;
+        self.$container.append(self.el);
+        self.render();
+      });
+    },
+
     template: _.template($('#photo-view-template').text()),
     render: function() {
-      this.$el.html(this.template());
+      this.$el.html( this.template({photo: this.model.toJSON()}) );
       new Anypic.Views.Subheader({
-        $container: $('#photo-view-content')
+        $container: $('#photo-view-content'),
+        model: {name: photo}
       });
       new Anypic.Views.CommentForm({
         $container: $('#photo-view-content')

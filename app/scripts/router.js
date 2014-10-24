@@ -62,10 +62,15 @@
       });
     },
     user: function() {
-      $('main').empty();
-      new Anypic.Views.User({
-        $container: $('main'),
-      });
+      if (location.hash.slice(8) === Parse.User.current().id) {
+        this.navigate('', {trigger: true});
+      }
+      else {
+        $('main').empty();
+        new Anypic.Views.User({
+          $container: $('main'),
+        });
+      }
     },
     login: function() {
       $('main').empty();
@@ -81,7 +86,6 @@
       $('main').empty();
       if (Parse.User.current()){
         Parse.User.logOut();
-        console.log(Parse.User.current());
         new Anypic.Views.Logout({
           $container: $('main')
         });
@@ -94,7 +98,7 @@
     },
     signup: function() {
       if (Parse.User.current()) {
-        this.navigate('index', {trigger: true});
+        this.navigate('', {trigger: true});
       } else {
         $('main').empty();
         new Anypic.Views.Signup({
