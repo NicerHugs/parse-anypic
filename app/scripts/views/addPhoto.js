@@ -54,7 +54,7 @@
       e.preventDefault();
       var self = this;
       this.model.set({
-        title: this.$('.title').val(),
+        name: this.$('.title').val(),
         author: Parse.User.current()
       });
       this.model.save()

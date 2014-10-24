@@ -17,9 +17,10 @@
     template: _.template($('#photo-view-template').text()),
     render: function() {
       this.$el.html( this.template({photo: this.model.toJSON()}) );
+      var name = this.model.get('name');
       new Anypic.Views.Subheader({
         $container: $('#photo-view-content'),
-        model: {name: 'photo'}
+        model: {name: name}
       });
       new Anypic.Views.CommentForm({
         $container: $('#photo-view-content')
