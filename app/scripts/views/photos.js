@@ -4,7 +4,8 @@
     className: 'users-list',
     render: function() {
       new Anypic.Views.Subheader({
-        $container: this.$el
+        $container: this.$el,
+        model: {name: "Photos"}
       });
       var self = this;
       var query = new Parse.Query(Anypic.Models.Photo);

@@ -5,8 +5,10 @@
     template: _.template($('#user-profile-template').text()),
     render: function() {
       this.$el.html(this.template());
+      var username = Parse.User.current().get('name');
       new Anypic.Views.Subheader({
-        $container: this.$el
+        $container: this.$el,
+        model: {name: username}
       });
       var query = new Parse.Query(Anypic.Models.Photo);
       query.equalTo('author', Parse.User.current());

@@ -9,7 +9,7 @@
     },
     template: _.template($('#subheader-template').text()),
     render: function() {
-      this.$el.html(this.template());
+      this.$el.html(this.template(this.model));
     }
   });
 

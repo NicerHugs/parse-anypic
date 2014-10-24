@@ -7,8 +7,12 @@
       var userID = location.hash.slice(8);
       var self = this;
       this.$el.html(this.template());
-      new Anypic.Views.Subheader({
-        $container: this.$el
+      var user = new Anypic.Models.User({id: userID});
+      user.fetch().then(function(){
+        new Anypic.Views.Subheader({
+          $container: self.$el,
+          model: {name: user.get('name')}
+        });
       });
       var query = new Parse.Query(Anypic.Models.Photo);
       var userQuery = new Parse.Query(Anypic.Models.User);
