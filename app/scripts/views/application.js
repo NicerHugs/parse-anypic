@@ -7,6 +7,10 @@
         options = options || {};
         $('body').prepend(this.el);
         this.render();
+        Anypic.session = new Anypic.Models.Session();
+        if (Parse.User.current()) {
+          Anypic.session.set('model', Parse.User.current());
+        }
       },
       render: function() {
         this.headerView = new Anypic.Views.Header({

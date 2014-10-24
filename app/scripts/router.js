@@ -86,6 +86,7 @@
       $('main').empty();
       if (Parse.User.current()){
         Parse.User.logOut();
+        Anypic.session.set('model', Parse.User.current());
         new Anypic.Views.Logout({
           $container: $('main')
         });
