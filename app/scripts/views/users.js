@@ -6,8 +6,15 @@
       new Anypic.Views.Subheader({
         $container: this.$el
       });
-      new Anypic.Views.ObjectList({
-        $container: this.$el
+      var query = new Parse.Query(Anypic.Models.User);
+      var collection = query.collection();
+      var self = this;
+      collection.fetch()
+      .then(function() {
+        new Anypic.Views.ObjectList({
+          $container: self.$el,
+          collection: collection
+        });
       });
     },
     events: {
@@ -15,7 +22,8 @@
     },
     viewUser: function(e) {
       e.preventDefault();
-      Anypic.router.navigate('user', {trigger: true});
+      var navigate = "#/users/" + $(e.target).parent().attr('data-attribute-link');
+      Anypic.router.navigate(navigate, {trigger: true});
     }
   });
 

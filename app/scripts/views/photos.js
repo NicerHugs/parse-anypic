@@ -22,7 +22,8 @@
     },
     viewPhoto: function(e) {
       e.preventDefault();
-      Anypic.router.navigate('photos/photo', {trigger: true});
+      var navigate = "photos/" + $(e.target).parent().attr('data-attribute-link');
+      Anypic.router.navigate(navigate, {trigger: true});
     }
   });
 

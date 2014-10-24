@@ -53,7 +53,6 @@
     saveImg: function(e) {
       e.preventDefault();
       var self = this;
-      console.log(Parse.User.current());
       this.model.set({
         title: this.$('.title').val(),
         author: Parse.User.current()

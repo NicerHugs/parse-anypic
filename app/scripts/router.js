@@ -10,16 +10,16 @@
         self.routesHit++;}, self);
     },
     routes: {
-      ''             : 'index',
-      'photos'       : 'photosIndex',
-      'photos/photo' : 'photoIndex', //dynamic
-      'photos/liked' : 'photosLiked',
-      'photos/add'   : 'addPhoto',
-      'users'        : 'usersIndex',
-      'user'         : 'userIndex', //dynamic
-      'login'        : 'login',
-      'logout'       : 'logout',
-      'signup'       : 'signup'
+      ''              : 'index',
+      'photos'        : 'photosIndex',
+      'photos/:photo' : 'photoIndex', //dynammic
+      'photos/liked'  : 'photosLiked',
+      'add'           : 'addPhoto',
+      'users'         : 'usersIndex',
+      'users/:user'   : 'user', //dynamic
+      'login'         : 'login',
+      'logout'        : 'logout',
+      'signup'        : 'signup'
     },
 
     index: function() {
@@ -61,10 +61,10 @@
         $container: $('main')
       });
     },
-    userIndex: function() {
+    user: function() {
       $('main').empty();
-      new Anypic.Views.Profile({
-        $container: $('main')
+      new Anypic.Views.User({
+        $container: $('main'),
       });
     },
     login: function() {
@@ -81,6 +81,7 @@
       $('main').empty();
       if (Parse.User.current()){
         Parse.User.logOut();
+        console.log(Parse.User.current());
         new Anypic.Views.Logout({
           $container: $('main')
         });
