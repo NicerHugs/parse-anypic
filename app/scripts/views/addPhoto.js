@@ -47,6 +47,7 @@
       var self = this;
       parseFile.save().then(function(){
         self.model.set('image', parseFile.url());
+        $('.submit').prop("disabled", false);
       });
     },
 

@@ -47,9 +47,10 @@
     <script type='text/template' id='signup-template'>
       <input type="text" class="username" placeholder="username">
       <input type="email" class="email" placeholder="email">
+      <label name="profile-pic">Profile Pic</label><input name="profile-pic" type="file">
       <input type="password" class="password" placeholder="password">
       <input type="password" class="verify-password" placeholder="verify password">
-      <input type="submit" value="create account">
+      <input class="submit" type="submit" value="create account" disabled>
     </script>
 
     <script type="text/template" id="logout-template">
@@ -90,7 +91,7 @@
         <input type="file">
         <input type="text" class="title" placeholder="title">
         <a href="close" class="close">x</a>
-        <input type="submit">
+        <input class="submit" disabled type="submit">
       </form>
     </script>
 

@@ -6,6 +6,9 @@
       initialize: function(options) {
         options = options || {};
         $('body').prepend(this.el);
+        this.render();
+      },
+      render: function() {
         this.headerView = new Anypic.Views.Header({
           $container: this.$el
         });
