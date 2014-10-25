@@ -71,9 +71,10 @@
         var user = new Anypic.Models.User({id: userID});
         user.fetch().then(function() {
           $('main').empty();
+          console.log(user);
           new Anypic.Views.User({
             $container: $('main'),
-            model: Parse.User(userID)
+            model: user
           });
         });
       }

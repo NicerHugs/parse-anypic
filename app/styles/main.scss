@@ -1,23 +1,4 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
-
-.photo-view,
-.add-photo-view {
-  background: rgba(0, 0, 0, 0.75);
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-#photo-view-content,
-#add-photo-view-content {
-  background: white;
-  height: 80%;
-  width: 75%;
-  margin: rem(50) auto;
-  position: relative;
-  overflow: scroll;
-  padding: rem(10);
-}
+@import 'header';
+@import 'photo-view';

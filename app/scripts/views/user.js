@@ -6,7 +6,7 @@
     render: function() {
       var self = this;
       var userID = location.hash.slice(8);
-      this.$el.html(this.template());
+      this.$el.html(this.template(this.model.toJSON()));
       var query = new Parse.Query(Anypic.Models.Photo);
       var user = new Anypic.Models.User({id: userID});
       user.fetch().then(function(){
