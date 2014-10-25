@@ -21,14 +21,18 @@
     },
     signup: function(e) {
       e.preventDefault();
+      var self = this;
       var email = this.$('.email').val();
       var password = this.$('.password').val();
       var attrs = {
         name: this.$('.username').val()
       };
-      Parse.User.signUp(email, password, attrs);
-      Anypic.router.navigate('', {trigger: true});
-      this.remove();
+      Parse.User.signUp(email, password, attrs)
+      .then(function(){
+        Anypic.session.set('user', Parse.User.current());
+        Anypic.router.navigate('', {trigger: true});
+        self.remove();
+      });
     }
   });
 })();

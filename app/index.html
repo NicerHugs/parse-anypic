@@ -27,13 +27,13 @@
 
 
     <script type='text/template' id='nav-template'>
-      <% //if (Parse.User.current()) { %>
+      <% if (Anypic.session.get('user')) { %>
         <a href="#/logout" class="logout">logout</a>
         <a href="#/add" class="add-photo">add</a>
-      <% //} else { %>
+      <% } else { %>
         <a href="#/login" class="login">login</a>
         <a href="#/signup" class="signup">sign up</a>
-      <% //} %>
+      <% } %>
         <a href="#/users" class="users">users</a>
         <a href="#/photos" class="photos">photos</a>
     </script>

@@ -1,3 +1,6 @@
 Anypic.Models.Session = new Parse.Object.extend({
-  className: "Session"
+  className: "Session",
+  initialize: function(){
+    this.set('user', Parse.User.current());
+  }
 });

@@ -20,7 +20,7 @@
             $('.logout-msg').remove();
           }
           Anypic.router.navigate('', {trigger: true});
-          Anypic.session.set('model', Parse.User.current());
+          Anypic.session.set('user', Parse.User.current());
         }
       );
     }
