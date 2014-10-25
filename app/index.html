@@ -28,14 +28,20 @@
 
     <script type='text/template' id='nav-template'>
       <% if (Anypic.session.get('user')) { %>
-        <a href="#/logout" class="logout">logout</a>
-        <a href="#/add" class="add-photo">add</a>
+        <div class="left-nav">
+          <a href="#/users" class="users">users</a>
+          <a href="#/photos" class="photos">photos</a>
+        </div>
+        <div class="right-nav">
+          <a href="#/add" class="add-photo">add</a>
+          <a href="#/logout" class="logout">logout</a>
+        </div>
       <% } else { %>
-        <a href="#/login" class="login">login</a>
-        <a href="#/signup" class="signup">sign up</a>
+        <div class="right-nav">
+          <a href="#/login" class="login">login</a>
+          <a href="#/signup" class="signup">sign up</a>
+        </div>
       <% } %>
-        <a href="#/users" class="users">users</a>
-        <a href="#/photos" class="photos">photos</a>
     </script>
 
     <script type='text/template' id='login-template'>

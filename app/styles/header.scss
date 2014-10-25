@@ -1,0 +1,43 @@
+header {
+  background: $dark;
+  height: 3rem;
+  padding: rem(16);
+  position: relative;
+
+  a {
+    color: $lightest;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: $cursive;
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  nav {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .right-nav {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    a {
+      display: inline-block;
+      line-height: rem(80);
+      padding: 0 rem(10);
+
+      &:hover {
+        color: $light;
+      }
+    }
+  }
+}
