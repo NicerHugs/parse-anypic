@@ -4,7 +4,7 @@
     className: 'user-profile',
     template: _.template($('#user-profile-template').text()),
     render: function() {
-      this.$el.html(this.template());
+      this.$el.html(this.template(this.model.toJSON()));
       var username = Parse.User.current().get('name');
       new Anypic.Views.Subheader({
         $container: this.$el,

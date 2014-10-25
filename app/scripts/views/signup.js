@@ -25,7 +25,8 @@
       var email = this.$('.email').val();
       var password = this.$('.password').val();
       var attrs = {
-        name: this.$('.username').val()
+        name: this.$('.username').val(),
+        image: this.model.get('profilePic')
       };
       Parse.User.signUp(email, password, attrs)
       .then(function(){

@@ -27,6 +27,7 @@
         $('main').empty();
         new Anypic.Views.Profile({
           $container: $('main'),
+          model: Parse.User.current()
         });
       } else {
         this.navigate('login', {trigger: true});
@@ -62,13 +63,18 @@
       });
     },
     user: function() {
-      if (location.hash.slice(8) === Parse.User.current().id) {
+      var userID = location.hash.slice(8);
+      if (userID === Parse.User.current().id) {
         this.navigate('', {trigger: true});
       }
       else {
-        $('main').empty();
-        new Anypic.Views.User({
-          $container: $('main'),
+        var user = new Anypic.Models.User({id: userID});
+        user.fetch().then(function() {
+          $('main').empty();
+          new Anypic.Views.User({
+            $container: $('main'),
+            model: Parse.User(userID)
+          });
         });
       }
     },
