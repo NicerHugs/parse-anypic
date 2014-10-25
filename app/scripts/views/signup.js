@@ -1,6 +1,7 @@
 (function() {
   Anypic.Views.Signup = Anypic.Views.Base.extend({
     tagName: 'form',
+    className: 'signup-form',
     template: _.template($('#signup-template').text()),
     render: function() {
       this.model = new Anypic.Models.User();

@@ -1,6 +1,7 @@
 (function() {
   Anypic.Views.Login = Anypic.Views.Base.extend({
     tagName: 'form',
+    className: 'login-form',
     template: _.template($('#login-template').text()),
     render: function() {
       this.$el.html(this.template());

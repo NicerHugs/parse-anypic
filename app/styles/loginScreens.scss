@@ -1,0 +1,44 @@
+.login-form,
+.signup-form {
+  border: solid 1px $dark;
+  border-radius: rem(10);
+  color: $dark;
+  margin: 10% auto;
+  max-width: rem(350);
+  overflow: auto;
+  padding: rem(20);
+
+  label {
+    display: block;
+    margin: rem(10) rem(5) rem(5);
+
+  }
+
+  input {
+    -webkit-appearance: none;
+    border: solid 1px lighten($dark, 50%);
+    border-radius: rem(5);
+    display: block;
+    height: rem(25);
+    margin: rem(5);
+    max-width: rem(330);
+    padding: rem(5);
+    width: 100%;
+  }
+
+  input[type=submit] {
+    -webkit-appearance: none;
+    background: $light;
+    border: 0;
+    border-radius: rem(5);
+    display: inline-block;
+    float: right;
+    height: auto;
+    padding: rem(10);
+    width: 50%;
+  }
+}
+
+.logout-msg {
+
+}
